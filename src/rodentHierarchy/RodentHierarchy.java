@@ -1,7 +1,6 @@
 package rodentHierarchy;
 
-public class RodentHierarchy
-{
+public class RodentHierarchy {
     public static void main(String args[]) {
        Rodent r[]=new Rodent[3];
        r[0]=new Mouse();
@@ -13,56 +12,49 @@ public class RodentHierarchy
     }
 }
 
-abstract class Rodent
-{
-    Rodent()
-    {
-
+abstract class Rodent {
+    Rodent() {
         System.out.println("Im in class Rodent");
     }
    abstract void run();
-
 }
 
-class Mouse extends Rodent
-{
-
-    Mouse()
-    {
+class Mouse extends Rodent {
+    Mouse() {
         System.out.println("Im in class Mouse");
     }
-   public void run()
-    {
+   public void run() {
         System.out.println("Mouse is running");
     }
 }
 
-class Gerbil extends Rodent
-{
-
-    Gerbil()
-    {
-
+class Gerbil extends Rodent {
+    Gerbil() {
         System.out.println("Im in class Gerbil");
     }
-    public void run()
-    {
-
+    public void run() {
         System.out.println("Gerbil is running");
     }
 }
 
-class Hamster extends Rodent
-{
-
-    Hamster()
-
-    {
+class Hamster extends Rodent {
+    Hamster() {
         System.out.println("Im in class Hamster");
     }
-    public void run()
-    {
-
+    public void run() {
         System.out.println("Hamster is running");
     }
 }
+
+/*
+*-:Output:-
+Im in class Rodent
+Im in class Mouse
+Mouse is running
+Im in class Rodent
+Im in class Gerbil
+Gerbil is running
+Im in class Rodent
+Im in class Hamster
+Hamster is running
+ */
