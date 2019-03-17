@@ -20,11 +20,24 @@ interface Languages extends Java, C, Python {
 }
 
 class ConcreteClass{
-
-
 }
 
 class ThreeInterfaces extends ConcreteClass implements Languages {
+
+    public void javaProgramming(Java java) {
+        java.compileJava();
+        java.executeJava();
+    }
+    public void cProgramming(C c) {
+        c.compileC();
+        c.executeC();
+    }
+    public void pythonProgramming(Python python) {
+        python.compilePython();
+        python.executePython();
+    }
+    public void programmingLanguages(Languages languages) {
+        languages.print(); }
 
     public void compileJava() {
         System.out.println("Java program is compiled");
@@ -48,26 +61,22 @@ class ThreeInterfaces extends ConcreteClass implements Languages {
         System.out.println("Print languages");
     }
 
-
-    public void javaProgramming(Java obj1) {
-        obj1.compileJava();
-        obj1.executeJava();
-    }
-    public void cProgramming(C obj2) {
-        obj2.compileC();
-        obj2.executeC();
-    }
-    public void pythonProgramming(Python obj3) {
-        obj3.compilePython();
-        obj3.executePython();
-    }
-    public void programmingLanguages(Languages obj4) {
-        obj4.print(); }
     public static void main(String[] args) {
-        ThreeInterfaces obj = new ThreeInterfaces();
-        obj.javaProgramming(obj);
-        obj.cProgramming(obj);
-        obj.pythonProgramming(obj);
-        obj.programmingLanguages(obj);
+        ThreeInterfaces threeInterfaces = new ThreeInterfaces();
+        threeInterfaces.javaProgramming(threeInterfaces);
+        threeInterfaces.cProgramming(threeInterfaces);
+        threeInterfaces.pythonProgramming(threeInterfaces);
+        threeInterfaces.programmingLanguages(threeInterfaces);
     }
 }
+
+/*
+*-:Output:-
+Java program is compiled
+Java program is executed
+C program is compiled
+C program is executed
+Python program is compiled
+Python program is executed
+Print languages
+ */
