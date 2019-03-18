@@ -1,33 +1,32 @@
 package innerClass;
 
-public class InnerClass
-{
-    public static void main(String args[])
-    {
-        Class2 c2= new Class2();
-        Class1 c1=new Class1();
-
-        Class2.Inner2 i2=c2.new Inner2(c1);
+public class InnerClass {
+    public static void main(String args[]) {
+        University university=new University();
+        College college= new College();
+        College.CollegeDataBase collegeDataBase=college.new CollegeDataBase(university);
     }
-
 }
-class Class1
-{
-    class Inner1
-    {
-        Inner1(String s)
-        {
-            System.out.println("String in inner1:"+s);
+
+class University {
+    class UniversityDataBase {
+        UniversityDataBase(String str) {
+            System.out.println("String in UniversityDataBase:"+str);
         }
     }
 }
-class Class2
-{
-    class Inner2 extends Class1.Inner1
-    {
-        Inner2(Class1 c1) {
-            c1.super("hello");
-            System.out.println("im inner2");
+
+class College {
+    class CollegeDataBase extends University.UniversityDataBase {
+        CollegeDataBase(University university) {
+            university.super("hello");
+            System.out.println("Im in CollegeDataBase");
         }
     }
 }
+
+/*
+-:Output:-
+String in UniversityDataBase:hello
+Im in CollegeDataBase
+ */
